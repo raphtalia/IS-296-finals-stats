@@ -29,7 +29,7 @@ public class StatsController implements ErrorController {
         statRepo.put(curry.getId(), curry);
     }
 
-    @RequestMapping(value="/stats")
+    @RequestMapping(value="/stats", produces="application/json")
     public ResponseEntity<Object> getStats() {
         return new ResponseEntity<>(statRepo.values(), HttpStatus.OK);
     }
